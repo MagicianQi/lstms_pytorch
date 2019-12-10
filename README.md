@@ -1,3 +1,3 @@
 # lstms_pytorch
 
-python example.py
+* `python example.py`
