@@ -35,6 +35,8 @@ exp_lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=2, gamma
 
 # -----------------------Train-----------------------
 
+model.train(mode=True)
+
 for epoch in range(num_epochs):
     print('Epoch {}/{}'.format(epoch, num_epochs - 1))
     print('-' * 20)
@@ -70,6 +72,8 @@ for epoch in range(num_epochs):
 
 inputs_val = [[torch.randn(1, 10) for _ in range(5)] for _ in range(10)]  # test data
 medias_val = [[torch.randn(1, 6) for _ in range(5)] for _ in range(10)]
+
+model.eval()
 
 for input_val, media_val in zip(inputs_val, medias_val):
     optimizer.zero_grad()
